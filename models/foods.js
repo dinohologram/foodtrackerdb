@@ -16,6 +16,7 @@ const Food = mongoose.model( 'Food', new mongoose.Schema({
         type: Date,
         default: Date.now
     }
+    // calories : pull from Nutritionix or use their logging system db
 }));
 
 function validateFood(food) {
