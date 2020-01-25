@@ -71,7 +71,7 @@ async function apiNutrition(search) {
     
     let response = await fetch(url, headers)
     let resJSON = await response.json()
-    console.log(resJSON)
+    return resJSON
 }
 
 async function display() {
@@ -80,3 +80,4 @@ async function display() {
 }
 
 exports.searchNutrix = apiCall
+exports.nutritionNutrix = apiNutrition
