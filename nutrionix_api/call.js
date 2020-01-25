@@ -3,6 +3,8 @@ const fetch = require('node-fetch');
 
 dotenv.config()
 
+
+
 async function apiCall(food) {
     let url = `https://trackapi.nutritionix.com/v2/search/instant?query=${food}`
     let headers = {
@@ -77,4 +79,4 @@ async function display() {
     console.log(await apiCall('rye bread'))
 }
 
-apiNutrition('peanut butter')
+exports.searchNutrix = apiCall
