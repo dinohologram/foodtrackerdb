@@ -16,7 +16,19 @@ const Food = mongoose.model( 'Food', new mongoose.Schema({
         type: Date,
         default: Date.now
     }
-    // calories : pull from Nutritionix or use their logging system db
+    // serving: {
+    //     type: String,
+    //     default: '1'
+    // },
+    // potassium: {
+    //     type: Number,
+    //     default: null
+    // },
+    // sodium: {
+    //     type: Number,
+    //     default: 0
+    // }
+    
 }));
 
 function validateFood(food) {
@@ -24,6 +36,9 @@ function validateFood(food) {
         name : Joi.string().max(50).required(),
         portion : Joi.string().max(20),
         date : Joi.date()
+        // sodium: Joi.number(),
+        // potassium: Joi.number(),
+        // serving: Joi.number()
     }
 
     return Joi.validate(food, schema)

@@ -48,7 +48,6 @@ async function apiCallSearchType(food, type) {
 
     } catch (error) {
         console.log(error);
-        
     }
 }
 async function apiNutrition(search) { 
@@ -68,16 +67,27 @@ async function apiNutrition(search) {
         },
         'body': JSON.stringify(body)
     }
-    
-    let response = await fetch(url, headers)
-    let resJSON = await response.json()
-    return resJSON
+
+    try {
+        let response = await fetch(url, headers)
+        let resJSON = await response.json()
+        return resJSON
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 async function display() {
-    //console.log(await apiCallSearchType('spinach', 'grocery'))
-    console.log(await apiCall('rye bread'))
+    try {
+        //console.log(await apiCallSearchType('spinach', 'grocery'))
+        // console.log(await apiCall('rye bread'))
+        console.log(await apiNutrition('lettuce'))
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 exports.searchNutrix = apiCall
-exports.nutritionNutrix = apiNutrition
+exports.apiNutrition = apiNutrition
+
+display()

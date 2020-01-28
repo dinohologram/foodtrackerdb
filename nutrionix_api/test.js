@@ -31,5 +31,5 @@ async function displayNutrition(search) {
     console.log(await nutritionNutrix(search))
 }
 
-trackSodium('pho soup')
-// displayNutrition('butter')
+// trackSodium('ramen noodle')
+displayNutrition('kiwi')
